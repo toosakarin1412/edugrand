@@ -13,6 +13,7 @@
         <div class="bg-[#b9dbff] p-5 border border-[#73aff3] rounded-xl flex flex-col gap-5 text-center">
             <?php
                 $lolos = false;
+                $kurang_mampu = false;
                 $pekerjaan = $_POST["pekerjaan"];
                 $nama = $_POST["nama"];
                 $gaji = $_POST["gaji"];
@@ -22,8 +23,26 @@
                 $nasional = $_POST["nasional"];
                 $provinsi = $_POST["provinsi"];
 
-                if ($pekerjaan == "pns") {
-                    $lolos = false;
+                // Check conditions for $kurang_mampu
+                if ($pekerjaan !== "pns" && ($gaji / $tanggungan) < 1000000 && $kendaraan <= 2) {
+                    $kurang_mampu = true;
+                } elseif ($pekerjaan !== "pns" && ($gaji / $tanggungan) < 700000) {
+                    $kurang_mampu = true;
+                }
+
+                // Check conditions for $lolos
+                if ($nasional >= 2) {
+                    $lolos = true;
+                } elseif ($nasional == 1 && $nilai >= 85) {
+                    $lolos = true;
+                } elseif ($provinsi >= 2 && $nilai >= 90) {
+                    $lolos = true;
+                } elseif ($provinsi == 1 && $nilai >= 93) {
+                    $lolos = true;
+                } elseif ($kurang_mampu && $nasional >= 1) {
+                    $lolos = true;
+                } elseif ($kurang_mampu && $provinsi >= 1 && $nilai >= 90) {
+                    $lolos = true;
                 }
 
                 if ($lolos) {
