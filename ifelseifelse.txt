@@ -1,0 +1,19 @@
+Kurang Mampu True Condition :
+
+if (pekerjaan != "pns") AND (gaji/tanggungan < 1.000.000) AND kendaraan <= 2
+
+if (pekerjaan != "pns") AND (gaji/tanggungan < 700.000)
+
+Lolos True Condition :
+
+if nasional >= 2
+
+if nasional = 1 AND nilai >= 85
+
+if provinsi >=2 AND nilai >= 90
+
+if provinsi =1 AND nilai >= 93
+
+if kurang_mampu AND nasional >= 1
+
+if kurang_mampu AND provinsi >=1 AND nilai >= 90
