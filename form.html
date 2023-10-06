@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informasi Orang Tua</title>
+    <style>
+          body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #3474ff;
+            border-radius: 5px;
+            background-color: #b9dbff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .outer-container {
+            display: flex;
+            justify-content: center; /* Pusatkan horizontal */
+            align-items: center; /* Pusatkan vertikal */
+            height: 100vh; /* Gunakan seluruh tinggi viewport */
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #73aff3;
+            border-radius: 3px;
+        }
+
+        select {
+            width: 96%;
+            padding: 10px;
+            border: 1px solid #73aff3;
+            border-radius: 3px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        img {
+            position: absolute;
+            top: 30px;
+            left: 20px;
+            width: 120px; /* Misalnya, 100px untuk setengah ukuran */
+            height: 70px;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="/assets/logo.png" alt="Logo Perusahaan">
+    <div class="outer-container">
+        <div class="container">
+            <h2>Informasi Orang Tua</h2>
+            <form id="infoForm" action="form.php" method="post">
+            <div class="form-group">
+                <label for="pekerjaan">Pekerjaan Orang Tua:</label>
+                <select id="pekerjaan" name="pekerjaan">
+                    <option value="PNS">PNS</option>
+                    <option value="Lainnya">Lainnya</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="gaji">Gaji Orang Tua (per bulan):</label>
+                <input type="text" id="gaji" name="gaji">
+            </div>
+            <div class="form-group">
+                <label for="kendaraan">Jumlah Kendaraan Orang Tua:</label>
+                <input type="text" id="kendaraan" name="kendaraan">
+            </div>
+            <div class="form-group">
+                <label for="tanggungan">Jumlah Tanggungan (keluarga/saudara):</label>
+                <input type="text" id="tanggungan" name="tanggungan">
+            </div>
+            <button type="submit">Simpan</button>
+        </form>
+    </div>
+
+    <script>
+        function submitForm() {
+            const pekerjaan = document.getElementById('pekerjaan').value;
+            const gaji = document.getElementById('gaji').value;
+            const kendaraan = document.getElementById('kendaraan').value;
+            const tanggungan = document.getElementById('tanggungan').value;
+
+            // Lakukan apa yang Anda inginkan dengan data yang telah diambil
+            console.log(`Pekerjaan: ${pekerjaan}`);
+            console.log(`Gaji: ${gaji}`);
+            console.log(`Jumlah Kendaraan: ${kendaraan}`);
+            console.log(`Jumlah Tanggungan: ${tanggungan}`);
+        }
+    </script>
+</body>
+</html>
